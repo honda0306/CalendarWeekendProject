@@ -10,6 +10,9 @@ Upon clicking on a task you should be able to mark it as done. This should be se
 
 Since this is a digital calendar it has the ability to have multiple different pictures so a carousel will be used to display this effect above the days/weeks of the month and just underneath the Month.
 
+The Clear completed and mark shift spots in the design would be the buttons to clear and shift.  Prev month and next month will also be clickable to change the month if it is desired to make a full calendar and not just one month. As this can be a lot, the objective is to use the skills learned this week to design a one month calendar. 
+
+
 Advanced ideas/features.
 Saving the task on localhost so that refresh allows the data to remain saved. A search bar to the left of the calendar that allows for the searching of the task and displays the dates on the sidebar where that task shows up.
 
