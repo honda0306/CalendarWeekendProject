@@ -10,9 +10,6 @@ Upon clicking on a task you should be able to mark it as done. This should be se
 
 Since this is a digital calendar it has the ability to have multiple different pictures so a carousel will be used to display this effect above the days/weeks of the month and just underneath the Month.
 
-
-One way of approaching this project is to separate the month data into arrays based on the day of the week. Passing the day of the week down as props and then filtering the AugustData.js file based off data and utilizing the curry function we saw on Fridays sprint challenge so that the correct date shows up on the right day of the week. 
-
 The Clear completed and mark shift spots in the design would be the buttons to clear and shift.  Prev month and next month will also be clickable to change the month if it is desired to make a full calendar and not just one month. As this can be a lot, the objective is to use the skills learned this week to design a one month calendar. Developing an algorithm to get every day of the year and moving forward would be a good idea for a portfolio/ resume piece but this weekend's objective is repetition and review. 
 
 
