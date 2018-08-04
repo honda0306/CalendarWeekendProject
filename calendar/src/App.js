@@ -17,21 +17,48 @@ const Day = styled.div`
   border: 1px solid #eee;
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
   font-size: 2rem;
-`;
-
-const DaysOfTheWeek = styled.div`
-  display: flex;
-  width: 700px;
-  margin: 0 auto;
-`;
-
-const DayName = styled.div`
-  padding: 2rem 0;
+  padding: 1rem;
 `;
 
 class App extends Component {
+  state = {
+    tasks: [
+      {
+        id: 1,
+        date: [2018, 8, 1],
+        task: 'hello',
+        completed: false
+      }
+    ],
+    UItasks: []
+  };
+
+  addTask = (date, task) => {
+    this.setState(({ tasks }) => ({
+      tasks: [
+        ...tasks,
+        {
+          id: Date.now(),
+          date,
+          task,
+          completed: false
+        }
+      ]
+    }));
+  };
+
+  getTasks = date => {
+    console.log(date);
+    this.setState(({ tasks }) => ({
+      UItasks: tasks.filter(task => {
+        return moment(task.date).isSame(moment(date));
+      })
+    }));
+  };
+
   render() {
     let days = [];
     for (
@@ -60,8 +87,21 @@ class App extends Component {
           <div style={{ textAlign: 'center' }}>Thursday</div>
           <div style={{ textAlign: 'center' }}>Friday</div>
           <div style={{ textAlign: 'center' }}>Saturday</div>
-          {days.map(day => <Day>{day !== '' ? day.format('D') : null}</Day>)}
+          {days.map(day => (
+            <Day onClick={() => this.getTasks(day.toArray().slice(0, 3))}>
+              <div>{day !== '' ? day.format('D') : null}</div>
+              <input
+                type="text"
+                onKeyDown={({ target: { value }, key }) =>
+                  key === 'Enter'
+                    ? this.addTask(day.toArray().slice(0, 3), value)
+                    : null
+                }
+              />
+            </Day>
+          ))}
         </CalenderContainer>
+        <div>{this.state.UItasks.map(task => <div>{task.task}</div>)}</div>
       </Container>
     );
   }
