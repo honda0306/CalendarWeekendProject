@@ -1,4 +1,4 @@
-# Calendar
+# Calendar   There is a AugustData.js file that features an array of objects date, and day of the week properties available to get started with at least one month. 
 This is my own project to recap Week 7 at Lambda School. Building a Calendar that will also have the ability to create task on each day of the week in the month. 
 #This is a Project I built to recap Week 7 at Lambda School
 
